@@ -8,7 +8,8 @@ pub fn main() !void {
     var br = std.io.bufferedReader(stdin);
 
     var words: [4096] u8 = undefined;
-    try br.read(&words);
+    var unused: usize = 0;
+    unused = try br.read(&words);
 
     // stdout is for the actual output of your application, for example if you
     // are implementing gzip, then only the compressed bytes should be sent to
