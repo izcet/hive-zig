@@ -7,7 +7,7 @@ pub fn main() !void {
     const stdin = std.io.getStdIn().reader();
     var br = std.io.bufferedReader(stdin);
 
-    var words: [4096] u8 = undefined;
+    var words: [4096] u8 = [_]u8{0} ** 4096;
     var unused: usize = 0;
     unused = try br.read(&words);
 
